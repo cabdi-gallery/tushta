@@ -7,6 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #ffe4ef, #eadcff);
+    background-attachment: fixed;
     color: #633d59;
     text-align: center;
     min-height: 100vh;
@@ -37,6 +38,23 @@ body {
     box-shadow: 0 5px 20px #00000012;
 }
 
+/* Sections fade in when opened */
+.message,
+.memories {
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 .welcome h2,
 .message h2 {
     color: #c04485;
@@ -63,6 +81,11 @@ button {
 
 button:active {
     transform: scale(0.97);
+}
+
+button:focus-visible {
+    outline: 3px solid #9b6be8;
+    outline-offset: 3px;
 }
 
 .hidden {
@@ -110,6 +133,68 @@ button:active {
     object-fit: cover;
     border-radius: 13px;
     cursor: pointer;
+}
+
+/* Smile Box */
+
+.smile-box {
+    width: 100%;
+    max-width: 650px;
+    margin: 40px auto 25px;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 22px;
+    box-shadow: 0 5px 20px #00000012;
+}
+
+.smile-box h2 {
+    color: #c04485;
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+#smile-message {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 20px 10px;
+    min-height: 66px;
+}
+
+/* Final note */
+
+.final-note {
+    max-width: 650px;
+    margin: 30px auto 10px;
+    padding: 10px 20px;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+.signature {
+    margin-top: 10px;
+    color: #c04485;
+    font-weight: bold;
+}
+
+/* Floating hearts */
+
+.floating-heart {
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    pointer-events: none;
+    animation: floatUp 2.2s ease-out forwards;
+}
+
+@keyframes floatUp {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(0.8);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-65vh) scale(1.4);
+    }
 }
 
 /* Full Image Viewer */
@@ -180,26 +265,12 @@ footer {
     }
 }
 
-.smile-box {
-    text-align: center;
-    padding: 30px;
-    margin: 30px auto;
-    border-radius: 20px;
-    background: #222;
-    color: white;
-}
+/* Respect people who turn animations off */
 
-.smile-box button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    background: #ff4f81;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#smile-message {
-    font-size: 18px;
-    margin: 20px;
+@media (prefers-reduced-motion: reduce) {
+    .message,
+    .memories,
+    .floating-heart {
+        animation: none;
+    }
 }
