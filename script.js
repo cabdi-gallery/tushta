@@ -28,6 +28,30 @@ function showGallery() {
     });
 }
 
+/* Voice message */
+
+function toggleVoice() {
+    const audio = document.getElementById("voiceAudio");
+    const btn = document.getElementById("voiceBtn");
+
+    if (audio.paused) {
+        audio.play();
+        btn.textContent = "Pause Voice ⏸️";
+    } else {
+        audio.pause();
+        btn.textContent = "Play Voice Message 🎧";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("voiceAudio");
+    const btn = document.getElementById("voiceBtn");
+
+    audio.addEventListener("ended", function () {
+        btn.textContent = "Play Voice Message 🎧";
+    });
+});
+
 /* Full screen image viewer */
 
 function openImage(image) {
