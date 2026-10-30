@@ -1,16 +1,18 @@
 function showFirst() {
-    document.getElementById("message1").classList.remove("hidden");
+    const section = document.getElementById("message1");
+    section.classList.remove("hidden");
 
-    document.getElementById("message1").scrollIntoView({
+    section.scrollIntoView({
         behavior: "smooth",
         block: "center"
     });
 }
 
 function showSecond() {
-    document.getElementById("message2").classList.remove("hidden");
+    const section = document.getElementById("message2");
+    section.classList.remove("hidden");
 
-    document.getElementById("message2").scrollIntoView({
+    section.scrollIntoView({
         behavior: "smooth",
         block: "center"
     });
@@ -18,7 +20,6 @@ function showSecond() {
 
 function showGallery() {
     const gallery = document.getElementById("memories");
-
     gallery.classList.remove("hidden");
 
     gallery.scrollIntoView({
@@ -26,6 +27,8 @@ function showGallery() {
         block: "start"
     });
 }
+
+/* Full screen image viewer */
 
 function openImage(image) {
     const viewer = document.getElementById("imageViewer");
@@ -39,20 +42,63 @@ function closeImage() {
     document.getElementById("imageViewer").style.display = "none";
 }
 
-function makeMeSmile() {
-    const messages = [
-        "Dhoolla-caddayntaadu waxay qurxisaa maalintayda ❤️",
-        "Waxaad ka xoog badan tahay sida aad mooddo 💪",
-        "Ha illoobin inaad tahay qof qaali ah 🌸",
-        "Naxariistaadu waa awooddaada 🥰",
-        "Mar walba dhoolla-caddee, qurux badan tushtu waa f....d! 😊",
-        "Digniin: Qosolkaagu waa mid dadka kale qaadsiiya xanunka masayrka 😂",
-        "Saaxiib wanaagsan wuxuu mudan yahay farxad aan dhammaad lahayn ❤️"
-    ];
+// Esc key closes the image
+document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+        closeImage();
+    }
+});
 
-    const randomMessage =
-        messages[Math.floor(Math.random() * messages.length)];
+/* Smile generator */
+
+const smileMessages = [
+    "Dhoolla-caddayntaadu waxay qurxisaa maalintayda ❤️",
+    "Waxaad ka xoog badan tahay sida aad mooddo 💪",
+    "Ha illoobin inaad tahay qof qaali ah 🌸",
+    "Naxariistaadu waa awooddaada 🥰",
+    "Mar walba dhoolla-caddee, naf qurux badan! 😊",
+    "Digniin: Qosolkaagu waa mid dadka kale qaadsiiya 😂",
+    "Saaxiib wanaagsan wuxuu mudan yahay farxad aan dhammaad lahayn ❤️"
+];
+
+let lastSmileIndex = -1;
+
+function makeMeSmile(event) {
+    // Pick a random message that is different from the last one
+    let index;
+    do {
+        index = Math.floor(Math.random() * smileMessages.length);
+    } while (index === lastSmileIndex);
+
+    lastSmileIndex = index;
 
     document.getElementById("smile-message").textContent =
-        randomMessage;
+        smileMessages[index];
+
+    launchHearts(event);
+}
+
+/* Floating hearts */
+
+function launchHearts(event) {
+    const hearts = ["❤️", "💗", "💖", "💕", "🌸"];
+
+    for (let i = 0; i < 8; i++) {
+        const heart = document.createElement("span");
+        heart.className = "floating-heart";
+        heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+        const baseX = event ? event.clientX : window.innerWidth / 2;
+        const x = baseX + (Math.random() * 120 - 60);
+
+        heart.style.left = x + "px";
+        heart.style.fontSize = 18 + Math.random() * 18 + "px";
+        heart.style.animationDelay = Math.random() * 0.4 + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function () {
+            heart.remove();
+        }, 2800);
+    }
 }
