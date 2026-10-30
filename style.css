@@ -1,1 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe0ef, #e5d7ff);
+}
+
+.welcome {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px 25px;
+  text-align: center;
+  background: rgba(255,255,255,0.75);
+  border-radius: 25px;
+  box-shadow: 0 15px 40px #b58bb855;
+}
+
+.hearts {
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+
+.small-title {
+  color: #a65b91;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  color: #a33d80;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.message {
+  color: #68566c;
+  line-height: 1.8;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+button {
+  border: none;
+  padding: 15px 25px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #e76baa, #a77bea);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.surprise {
+  display: none;
+  margin-top: 25px;
+  padding: 20px;
+  color: #9b4381;
+  background: #ffe5f2;
+  border-radius: 15px;
+  line-height: 1.7;
+}
+
+.footer {
+  margin-top: 35px;
+  color: #a17a9b;
+  font-size: 13px;
+}
