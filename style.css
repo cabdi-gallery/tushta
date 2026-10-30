@@ -79,3 +79,117 @@ button:hover {
   color: #a17a9b;
   font-size: 13px;
 }
+
+/* LITTLE MEMORIES */
+
+.memories {
+    padding: 65px 18px;
+    background: linear-gradient(180deg, #fff0f7, #f5edff);
+    text-align: center;
+}
+
+.memory-heading {
+    max-width: 600px;
+    margin: 0 auto 35px;
+}
+
+.memory-tag {
+    color: #bd65a0;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.memory-heading h2 {
+    font-size: 32px;
+    color: #713e70;
+    margin: 12px 0;
+}
+
+.memory-heading p {
+    color: #806b83;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.memory-card {
+    background: white;
+    padding: 10px;
+    border-radius: 17px;
+    box-shadow: 0 5px 20px rgba(120, 65, 110, 0.10);
+    text-align: left;
+    overflow: hidden;
+}
+
+.memory-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.memory-card img:hover {
+    transform: scale(1.03);
+}
+
+.memory-card h3 {
+    color: #874d81;
+    font-size: 15px;
+    margin: 12px 3px 5px;
+}
+
+.memory-card p {
+    color: #777;
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 0 3px 8px;
+}
+
+/* IMAGE VIEWER */
+
+.image-viewer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.93);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-viewer img {
+    max-width: 95%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.close-viewer {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+@media (max-width: 380px) {
+    .memory-card img {
+        height: 150px;
+    }
+
+    .memory-grid {
+        gap: 10px;
+    }
+}
