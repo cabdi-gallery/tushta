@@ -40,15 +40,14 @@ function closeImage() {
 }
 
 function makeMeSmile() {
-
     const messages = [
-        "Your smile makes everything beautiful ❤️",
-        "You are stronger than you think 💪",
-        "Never forget how special you are 🌸",
-        "Your kindness is your superpower 🥰",
-        "Keep smiling, beautiful soul! 😊",
-        "Warning: Your smile is contagious 😂",
-        "A good friend deserves endless happiness ❤️"
+        "Dhoolla-caddayntaadu waxay qurxisaa maalintayda ❤️",
+        "Waxaad ka xoog badan tahay sida aad mooddo 💪",
+        "Ha illoobin inaad tahay qof qaali ah 🌸",
+        "Naxariistaadu waa awooddaada 🥰",
+        "Mar walba dhoolla-caddee, naf qurux badan! 😊",
+        "Digniin: Qosolkaagu waa mid dadka kale qaadsiiya 😂",
+        "Saaxiib wanaagsan wuxuu mudan yahay farxad aan dhammaad lahayn ❤️"
     ];
 
     const randomMessage =
