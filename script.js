@@ -45,8 +45,8 @@ function makeMeSmile() {
         "Waxaad ka xoog badan tahay sida aad mooddo 💪",
         "Ha illoobin inaad tahay qof qaali ah 🌸",
         "Naxariistaadu waa awooddaada 🥰",
-        "Mar walba dhoolla-caddee, naf qurux badan! 😊",
-        "Digniin: Qosolkaagu waa mid dadka kale qaadsiiya 😂",
+        "Mar walba dhoolla-caddee, qurux badan tudhtu waa f....d! 😊",
+        "Digniin: Qosolkaagu waa mid dadka kale qaadsiiya xanunka masayrka 😂",
         "Saaxiib wanaagsan wuxuu mudan yahay farxad aan dhammaad lahayn ❤️"
     ];
 
