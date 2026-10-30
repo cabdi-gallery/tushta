@@ -1,97 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Little Friendship 💗</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f8d7e8">
+    <title>Our Little Friendship</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <main class="welcome">
-    <div class="hearts">💗 ✨ 💜</div>
+    <header class="hero">
+        <h1>Our Little Friendship 💗</h1>
+        <p>A little place filled with smiles, kindness and memories.</p>
+    </header>
 
-    <p class="small-title">A LITTLE PLACE FULL OF SMILES</p>
+    <main>
 
-    <h1>Welcome, Shadia! 🌸</h1>
+        <!-- Welcome Section -->
+        <section class="welcome">
+            <h2>Welcome, Shadia! 🌸</h2>
+            <p>
+                This little surprise is made to remind you how special
+                a beautiful friendship can be.
+            </p>
 
-    <p class="message">
-      Some people make ordinary days feel special.
-      This little space is made to celebrate
-      friendship, happiness and beautiful memories.
-    </p>
+            <button onclick="showFirst()">Open Surprise 💌</button>
+        </section>
 
-    <button onclick="showSurprise()">
-      Open Your Surprise 🎁
-    </button>
+        <!-- First Message -->
+        <section id="message1" class="message hidden">
+            <h2>A Little Compliment 🌷</h2>
+            <p>
+                You are a wonderful friend. Your kindness, beautiful
+                personality and lovely smile make every moment brighter.
+            </p>
 
-    <div id="surprise" class="surprise">
-      You deserve happiness, endless smiles
-      and beautiful moments. Never stop shining! 💖
+            <button onclick="showSecond()">Continue ✨</button>
+        </section>
+
+        <!-- Second Message -->
+        <section id="message2" class="message hidden">
+            <h2>One More Thing 💖</h2>
+            <p>
+                Always keep smiling, Shadia. I wish you happiness,
+                success, peace and many beautiful moments.
+                May your days always be full of good things!
+            </p>
+
+            <button onclick="showGallery()">See Our Memories 📸</button>
+        </section>
+
+        <!-- Memories Gallery -->
+        <section id="memories" class="memories hidden">
+            <h2>Our Beautiful Memories 📷</h2>
+            <p class="gallery-text">
+                Every picture holds a little memory. Enjoy! 💕
+            </p>
+
+            <div class="memories-grid">
+
+                <div class="memory-card">
+                    <img src="photo20.jpeg" alt="Memory 1" onclick="openImage(this)">
+                </div>
+
+                <div class="memory-card">
+                    <img src="photo21.jpeg" alt="Memory 2" onclick="openImage(this)">
+                </div>
+
+                <div class="memory-card">
+                    <img src="photo22.jpeg" alt="Memory 3" onclick="openImage(this)">
+                </div>
+
+                <div class="memory-card">
+                    <img src="photo23.jpeg" alt="Memory 4" onclick="openImage(this)">
+                </div>
+
+                <div class="memory-card">
+                    <img src="photo24.jpeg" alt="Memory 5" onclick="openImage(this)">
+                </div>
+
+                <div class="memory-card">
+                    <img src="photo25.jpeg" alt="Memory 6" onclick="openImage(this)">
+                </div>
+
+                <div class="memory-card">
+                    <img src="photo26.jpeg" alt="Memory 7" onclick="openImage(this)">
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Full Screen Image Viewer -->
+    <div id="imageViewer" class="image-viewer" onclick="closeImage()">
+        <span class="close">&times;</span>
+        <img id="largeImage" src="" alt="Full size memory">
     </div>
 
-    <p class="footer">Made with friendship 💗</p>
-  </main>
+    <footer>
+        <p>Made with kindness and friendship 💗</p>
+    </footer>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 
-  <section class="memories" id="memories">
-    <div class="memory-heading">
-        <span class="memory-tag">OUR LITTLE WORLD ✨</span>
-        <h2>Little Memories</h2>
-        <p>Small moments, beautiful memories, and a friendship worth appreciating. 💗</p>
-    </div>
-
-    <div class="memory-grid">
-
-        <div class="memory-card">
-            <img src="photo20.jpeg" alt="Shadia in black" onclick="openImage(this)">
-            <h3>Elegance ✨</h3>
-            <p>Qurux iyo degganaan isku darsamay.</p>
-        </div>
-
-        <div class="memory-card">
-            <img src="photo21.jpeg" alt="Best friends" onclick="openImage(this)">
-            <h3>Best Friends 💙</h3>
-            <p>Laba qof, laba waddo, laakiin saaxiibtinimo wanaagsan.</p>
-        </div>
-
-        <div class="memory-card">
-            <img src="photo22.jpeg" alt="Shadia in yellow" onclick="openImage(this)">
-            <h3>Sunshine 🌻</h3>
-            <p>Dhoolla-caddayn maalinta qurxisa.</p>
-        </div>
-
-        <div class="memory-card">
-            <img src="photo23.jpeg" alt="Friendship message" onclick="openImage(this)">
-            <h3>Kind Words 💌</h3>
-            <p>Erayo wanaagsan oo qalbiga farxad geliya.</p>
-        </div>
-
-        <div class="memory-card">
-            <img src="photo24.jpeg" alt="Princess message" onclick="openImage(this)">
-            <h3>Our Princess 👑</h3>
-            <p>Amaan yar oo loogu talagalay qof mudan wanaag.</p>
-        </div>
-
-        <div class="memory-card">
-            <img src="photo25.jpeg" alt="Voice message" onclick="openImage(this)">
-            <h3>A Special Moment 🎧</h3>
-            <p>Xusuuso yaryar oo qiimo weyn leh.</p>
-        </div>
-
-        <div class="memory-card">
-            <img src="photo26.jpeg" alt="Shadia in brown" onclick="openImage(this)">
-            <h3>Beautiful Smile 🌸</h3>
-            <p>Dhoolla-caddayntaadu ha ahaato mid joogto ah.</p>
-        </div>
-
-    </div>
-</section>
-
-<div id="imageViewer" class="image-viewer" onclick="closeImage()">
-    <span class="close-viewer">&times;</span>
-    <img id="largeImage" src="" alt="Large memory">
-</div>
 </body>
 </html>
