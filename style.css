@@ -179,3 +179,27 @@ footer {
         font-size: 23px;
     }
 }
+
+.smile-box {
+    text-align: center;
+    padding: 30px;
+    margin: 30px auto;
+    border-radius: 20px;
+    background: #222;
+    color: white;
+}
+
+.smile-box button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background: #ff4f81;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#smile-message {
+    font-size: 18px;
+    margin: 20px;
+}
