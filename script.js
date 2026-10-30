@@ -30,25 +30,57 @@ function showGallery() {
 
 /* Voice message */
 
+function formatTime(seconds) {
+    if (isNaN(seconds)) return "00:00";
+    const m = Math.floor(seconds / 60);
+    const s = Math.floor(seconds % 60);
+    return String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+}
+
 function toggleVoice() {
     const audio = document.getElementById("voiceAudio");
-    const btn = document.getElementById("voiceBtn");
 
     if (audio.paused) {
         audio.play();
-        btn.textContent = "Pause Voice ⏸️";
     } else {
         audio.pause();
-        btn.textContent = "Play Voice Message 🎧";
     }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
     const audio = document.getElementById("voiceAudio");
-    const btn = document.getElementById("voiceBtn");
+    const playBtn = document.getElementById("playBtn");
+    const seekBar = document.getElementById("seekBar");
+    const curTime = document.getElementById("curTime");
+    const durTime = document.getElementById("durTime");
 
-    audio.addEventListener("ended", function () {
-        btn.textContent = "Play Voice Message 🎧";
+    audio.addEventListener("loadedmetadata", function () {
+        durTime.textContent = formatTime(audio.duration);
+    });
+
+    audio.addEventListener("play", function () {
+        playBtn.textContent = "⏸";
+        playBtn.setAttribute("aria-label", "Pause");
+    });
+
+    audio.addEventListener("pause", function () {
+        playBtn.textContent = "▶";
+        playBtn.setAttribute("aria-label", "Play");
+    });
+
+    audio.addEventListener("timeupdate", function () {
+        if (audio.duration) {
+            seekBar.value = (audio.currentTime / audio.duration) * 100;
+            seekBar.style.setProperty("--progress", seekBar.value + "%");
+        }
+        curTime.textContent = formatTime(audio.currentTime);
+    });
+
+    // Drag the bar to jump to another part
+    seekBar.addEventListener("input", function () {
+        if (audio.duration) {
+            audio.currentTime = (seekBar.value / 100) * audio.duration;
+        }
     });
 });
 
