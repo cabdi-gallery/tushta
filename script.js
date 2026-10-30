@@ -1,7 +1,30 @@
-function showSurprise() {
-  const surprise = document.getElementById("surprise");
+function showFirst() {
+    document.getElementById("message1").classList.remove("hidden");
 
-  surprise.style.display = "block";
+    document.getElementById("message1").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+
+function showSecond() {
+    document.getElementById("message2").classList.remove("hidden");
+
+    document.getElementById("message2").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+
+function showGallery() {
+    const gallery = document.getElementById("memories");
+
+    gallery.classList.remove("hidden");
+
+    gallery.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
 function openImage(image) {
